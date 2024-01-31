@@ -29,7 +29,9 @@ Brief description of the framework is presented here: https://github.com/unicfdl
 
 The repository is organized as follows:
 * *master* branch is used for the Doxygen-generated documents (not finished yet) and last test report
-* *digitef-dev-ABCD* - latest working version of the framework for OpenFOAM+ version *ABCD*
+* Next versions of the library correspond to OpenFOAM versions:
+    - digitef-dev-1912
+    - 
 * other branches are for internal use and are not intended for compilation
 
 Source code of releases for OpenFOAM+ are stored in *releases* section, the naming conventions are the same as for repository's branches
