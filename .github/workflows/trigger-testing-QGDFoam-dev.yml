@@ -1,7 +1,9 @@
 name: Starts testing of QGDFoam (dev branch)
 
 on:
-  push
+  push:
+    branches:
+      - dev
 
 jobs:
   start-VnV-QGDFoam:
