@@ -2,15 +2,31 @@ name: Starts testing of QGDFoam
 
 on:
   workflow_dispatch:
+     inputs:
+      VnV:
+        description: 'ًVnV workflow which will be triggered'
+        required: true
+        default: 'check-QGDFoam.yml'
+
+      workflow2_github_account:
+        description: 'GitHub Account Owner'
+        required: true
+        default: 'mkraposhin'
+
+      workflow2_repo_github:
+        description: 'repo-name'
+        required: true
+        default: 'VnV' 
 
 jobs:
   start-VnV-QGDFoam:
     runs-on: ubuntu-latest
     steps:
-     - name: Starts the process of QGDFoam verification and validation
-       run: |
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Test
+        run: |
           curl -X POST https://api.github.com/repos/mkraposhin/VnV/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
-          -u ${{ secrets.VNVEXECUTE }} \
-          --data '{"event_type": "Trigger Workflow"}'
-     - uses: actions/checkout@v3
+          -u ${{ secrets.ACTIONS_KEY }} \
+          --data '{"event_type": "Trigger Workflow", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
+      - uses: actions/checkout@v3
