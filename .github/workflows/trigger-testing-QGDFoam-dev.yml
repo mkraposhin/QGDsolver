@@ -1,7 +1,6 @@
 name: Starts testing of QGDFoam (dev branch)
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - 'dev'
