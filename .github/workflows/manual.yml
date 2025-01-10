@@ -12,5 +12,5 @@ jobs:
           curl -X POST https://api.github.com/repos/mkraposhin/VnV/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
           -u ${{ secrets.VNVEXECUTE }} \
-          --data '{"event_type": "Trigger Workflow", "client_payload": { "repository": "mkraposhin/QGDsolver" }}'
+          --data '{"event_type": "Trigger Workflow"}'
      - uses: actions/checkout@v3
