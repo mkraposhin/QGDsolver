@@ -3,11 +3,6 @@ name: Starts testing of QGDFoam (dev branch)
 on:
   push
 
-# This works only if we put yml into the corresponding branch
-#  push:
-#    branches:
-#      - dev
-
 jobs:
   start-VnV-QGDFoam:
     runs-on: ubuntu-latest
